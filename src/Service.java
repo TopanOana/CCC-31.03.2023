@@ -12,7 +12,7 @@ public class Service {
     }
 
 
-    public String lastStanding(int nrFighters, String tournament){
+    public String lastFighterStanding(int nrFighters, String tournament){
         String finalString = "";
         while (tournament.length()>1){
             finalString="";
@@ -27,7 +27,7 @@ public class Service {
         return finalString;
     }
 
-    public String generateShit(int nrFighters, int nrRock, int nrPaper, int nrScissors){
+    public String notgoodgenerate(int nrFighters, int nrRock, int nrPaper, int nrScissors){
         String finalString = "";
         //first RRRP
         int numberRounds = (int)(Math.log(nrFighters) / Math.log(2));
@@ -95,7 +95,7 @@ public class Service {
     }
 
 
-    public String newGenShit(int nrFighters, int nrRock, int nrPaper, int nrScissors){
+    public String generateLevel4(int nrFighters, int nrRock, int nrPaper, int nrScissors){
         String finalString = "";
         int nr = (int)(Math.log(nrFighters) / Math.log(2))-1;
 //        System.out.println(nr);
@@ -142,7 +142,7 @@ public class Service {
     }
 
 
-    public String newGenShit1(int nrFighters, int nrRock, int nrPaper, int nrScissors, int nrL, int nrY){
+    public String generateLevel5(int nrFighters, int nrRock, int nrPaper, int nrScissors, int nrL, int nrY){
         String finalString = "";
 //        int nr = (int)(Math.log(nrFighters) / Math.log(2))-1;
 ////        System.out.println(nr);
@@ -215,7 +215,7 @@ public class Service {
 
 
 
-    public void doShit(){
+    public void mainAction(){
 
         try {
             File input = new File("C:/Users/oanam/IdeaProjects/CCC31MARCH/src/input.txt");
@@ -238,8 +238,8 @@ public class Service {
                 int nrY = Integer.valueOf(tourneu.get(4).substring(0, tourneu.get(4).length()-1));
                 if (N==33) {
                     int i=0;}
-                String tournament = this.newGenShit1(M,nrRock,nrPaper,nrScissors, nrLiz, nrY);
-                out.write(lastStanding(M,tournament));
+                String tournament = this.generateLevel5(M,nrRock,nrPaper,nrScissors, nrLiz, nrY);
+                out.write(lastFighterStanding(M,tournament));
                 out.write(":->");
                 out.write(tournament);
                 out.write("\n");
